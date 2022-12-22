@@ -1,0 +1,5 @@
+C:\Users\user\Desktop\Geekbrains\CC\RESULT\obj\Debug\net6.0\RESULT.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\Geekbrains\CC\RESULT\obj\Debug\net6.0\RESULT.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\Geekbrains\CC\RESULT\obj\Debug\net6.0\RESULT.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\Geekbrains\CC\RESULT\obj\Debug\net6.0\RESULT.AssemblyInfo.cs
+C:\Users\user\Desktop\Geekbrains\CC\RESULT\obj\Debug\net6.0\RESULT.csproj.CoreCompileInputs.cache

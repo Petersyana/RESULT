@@ -4,9 +4,9 @@
 // с клавиатуры, либо задать на старте выполнения алгоритма.
 
 Console.WriteLine("Введите текст. Не меннее 10 слов.");
-string text = string.Parse(Console.ReadLine());
+string text = string(Console.ReadLine());
 
-char [] separators = {" ", ",", ".", "-", ";", ":", "!", "?"};
+string [] separators = {" ", ",", ".", "-", ";", ":", "!", "?"};
 string [] words = text.Split(separators, StringSplitOptions.RemoveEmptyEntrise);
 
 int i = 0;
@@ -25,7 +25,7 @@ for (i = 0; i < words.Length; i++)
     }
 }
 
-  void PrintArray(int[] inArray) // вывод на печать
+  void PrintArray(string[] inArray) // вывод на печать
 {
     
         for (int j = 0; j < inArray.GetLength(1); j++)
