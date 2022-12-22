@@ -24,3 +24,16 @@ for (i = 0; i < words.Length; i++)
          j++;
     }
 }
+
+  void PrintArray(int[] inArray) // вывод на печать
+{
+    
+        for (int j = 0; j < inArray.GetLength(1); j++)
+        {
+            Console.Write($" {inArray[j]} ");
+        }
+        Console.WriteLine();
+    
+}
+
+PrintArray(newWords);
