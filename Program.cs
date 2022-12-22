@@ -3,40 +3,60 @@
 // либо равна 3 символам. Первоначальный массив можно ввести 
 // с клавиатуры, либо задать на старте выполнения алгоритма.
 
-// Console.WriteLine("Введите текст. Не меннее 10 слов.");
-// string text = Console.ReadLine();
-string text = "привет, дом мама ура! солнце 123 забор 2?5 66 нгш ";
+
+// У Лукоморья дуб зеленый, златая цепь на дубе том. 
+// И днем, и ночью кот ученый все ходит по цепи кругом.
+
+Console.Clear();
+
+Console.WriteLine("Введите текст. Не меннее 10 слов.");
+string text = Console.ReadLine();
 
 string [] separators = {" ", ",", ".", "-", ";", ":", "!", "?"};
-string [] words = text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+string [] Words = text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
 
 int i = 0;
 int j = 0;
-string [] newWords = words;
+string [] tempWords = new string[Words.Length];// пустой доп массив
 char s = ' ';
 
-int n = words[0].LastIndexOf(s);
-
-for (i = 0; i < words.Length; i++)
+// метод возвращает доп массив из 3х символьных строк и пустых строк вместо строк длинее 3 символов
+string [] TempArray (string [] inArray) 
 {
-    words[i] = words[i] + s;
-   
-    if (((words[i].LastIndexOf(s)-1) <= 2))
-         newWords[j] = words[i];
-    else
-        newWords[j] = new string(" ");
-
-         j++;
+for (i = 0; i < inArray.Length; i++)
+{
+    inArray[i] = inArray[i] + s;
+    if (((inArray[i].LastIndexOf(s)-1) <= 2))
+         tempWords[i] = inArray[i];
+}
+return(tempWords);
 }
 
-  void PrintArray(string[] inArray) // вывод на печать
+string text1 = tempWords[0];
+
+// метод возвращает строку из элементов доп массива
+String Text1(string [] inArray) 
 {
-    
-        for (int j = 0; j < inArray.Length; j++)
+    for (j = 1; j < inArray.Length; j++)
+    text1 = text1+inArray[j];
+    return(text1);
+}
+ 
+ // метод выводит результат (массив) на печать
+  void PrintArray(string[] inArray) 
+{
+    for (int j = 0; j < inArray.Length; j++)
         {
             Console.Write($" {inArray[j]}");
             Console.WriteLine();
-        }
+        } 
 }
 
+TempArray(Words);
+Text1(tempWords);
+
+//создаем массив, в котором длина всех эелементов <= 3 символам 
+string [] newWords = text1.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+
 PrintArray(newWords);
+
