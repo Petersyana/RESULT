@@ -9,18 +9,18 @@
 
 Console.Clear();
 
-Console.WriteLine("Введите текст. Не меннее 10 слов.");
+Console.WriteLine("Введите текст");
 string text = Console.ReadLine();
 
 string [] separators = {" ", ",", ".", "-", ";", ":", "!", "?"};
-string [] Words = text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-
 int i = 0;
-int j = 0;
-string [] tempWords = new string[Words.Length];// пустой доп массив
 char s = ' ';
 
-// метод возвращает доп массив из 3х символьных строк и пустых строк вместо строк длинее 3 символов
+string [] Words = text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+string [] tempWords = new string[Words.Length];// пустой доп массив
+string text1 = tempWords[0];
+
+// метод возвращает доп массив из 3х символьных элементов массива и пустых ячеек вместо строк длинее 3 символов
 string [] TempArray (string [] inArray) 
 {
 for (i = 0; i < inArray.Length; i++)
@@ -32,23 +32,22 @@ for (i = 0; i < inArray.Length; i++)
 return(tempWords);
 }
 
-string text1 = tempWords[0];
-
-// метод возвращает строку из элементов доп массива
+// метод возвращает строку из всех символьных элементов доп массива
 String Text1(string [] inArray) 
 {
-    for (j = 1; j < inArray.Length; j++)
-    text1 = text1+inArray[j];
+    for (i = 0; i < inArray.Length; i++)
+    text1 = text1+inArray[i];
     return(text1);
 }
  
  // метод выводит результат (массив) на печать
   void PrintArray(string[] inArray) 
 {
-    for (int j = 0; j < inArray.Length; j++)
+    Console.WriteLine();
+    Console.WriteLine("Результат - массив из строк, длина которых не более 3 символов");
+    for (int i = 0; i < inArray.Length; i++)
         {
-            Console.Write($" {inArray[j]}");
-            Console.WriteLine();
+            Console.Write($"     {inArray[i]}");
         } 
 }
 
